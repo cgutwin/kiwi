@@ -1,0 +1,72 @@
+{
+  "name": "@kiwi/client",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:4000",
+  "dependencies": {
+    "@apollo/client": "^3.5.7",
+    "@ericblade/quagga2": "^1.4.2",
+    "@kiwi/components": "file:./src/components",
+    "@kiwi/context": "file:./src/context",
+    "@kiwi/graphql": "file:./src/graphql",
+    "@kiwi/hooks": "file:./src/hooks",
+    "@kiwi/icons": "file:./src/icons",
+    "@kiwi/pages": "file:./src/pages",
+    "@kiwi/styles": "file:./src/styles",
+    "@kiwi/themes": "file:./src/themes",
+    "@kiwi/ui": "file:./src/interface",
+    "@kiwi/utils": "file:./src/utils",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^16.11.19",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@types/styled-components": "^5.1.20",
+    "@types/typography": "^0.16.4",
+    "date-fns": "^2.28.0",
+    "framer-motion": "^5.6.0",
+    "graphql": "^16.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-error-boundary": "^3.1.4",
+    "react-hook-form": "^7.24.0",
+    "react-is": "^17.0.2",
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "5.0.0",
+    "styled-components": "^5.3.3",
+    "svg-loaders-react": "^2.2.1",
+    "typescript": "^4.5.4",
+    "typography": "^0.16.21",
+    "web-vitals": "^2.1.3"
+  },
+  "devDependencies": {
+    "serve": "^13.0.2"
+  },
+  "scripts": {
+    "dev:serve": "serve -s build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 2 iOS major versions"
+    ]
+  }
+}

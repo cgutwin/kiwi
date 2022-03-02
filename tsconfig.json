@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@kiwi/components": ["components"],
+      "@kiwi/context": ["context"],
+      "@kiwi/graphql/*": ["graphql/*"],
+      "@kiwi/hooks": ["hooks"],
+      "@kiwi/icons/*": ["icons/*"],
+      "@kiwi/ui/*": ["interface/*"],
+      "@kiwi/pages": ["pages"],
+      "@kiwi/styles/*": ["styles/*"],
+      "@kiwi/themes": ["themes"],
+      "@kiwi/utils": ["utils"],
+    },
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "src",
+    "types"
+  ]
+}
