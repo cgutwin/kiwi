@@ -6,7 +6,7 @@ import styled from "styled-components"
 
 import { Modal } from "@kiwi/components"
 import { useScanner } from "@kiwi/hooks"
-import { PageWrapper } from "@kiwi/pages/ProductDetails/styles"
+import { PageWrapper } from "@kiwi/pages/Product/styles"
 import { ReactComponent as X } from "@kiwi/icons/close.svg"
 import { IconButton } from "@kiwi/ui/buttons"
 import CustomInput from "@kiwi/ui/inputs"

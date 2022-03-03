@@ -4,10 +4,10 @@ import { Card } from "../../ProductDetails"
 
 function ExpiringFallback({ error, resetErrorBoundary }: FallbackProps) {
   return <Card style={{
-    background: "#FFF6F6"
+    background: "rgba(255,65,63,0.1)"
   }}>
-    <h2 className="t-h-reduced-size-2 t-reduced-bottom-margin" style={{ color: "#FF413F" }}>Uh Oh!</h2>
-    <p style={{ color: "#FF413F" }}>There was an error loading entries!</p>
+    <h2 className="t-h-reduced-size-2 t-reduced-bottom-margin" style={{ color: "#FF413F" }}>There's been an error!</h2>
+    <p style={{ color: "#FF413F" }}>Couldn't load expiry info for product.</p>
   </Card>
 }
 

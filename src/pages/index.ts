@@ -1,2 +1,2 @@
-export * from "./ProductDetails"
+export * from "./Product"
 export * from "./Scan"

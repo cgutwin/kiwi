@@ -1,11 +1,11 @@
 import { ErrorBoundary } from "react-error-boundary"
 import React from "react"
-import ExpiringFallback from "../Expiry/Fallback"
+import ProductFallback from "./Fallback"
 import ProductData from "./ProductData"
 
 function ProductView() {
   return (
-    <ErrorBoundary FallbackComponent={ExpiringFallback}>
+    <ErrorBoundary FallbackComponent={ProductFallback}>
       <ProductData/>
     </ErrorBoundary>
   )

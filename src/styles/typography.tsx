@@ -66,7 +66,7 @@ export default new Typography({
     "[data-t-unfocused]": {
       opacity: 0.6
     },
-    ".t-h-with-margin-bottom": {
+    ".t-with-margin-bottom": {
       marginBottom: rhythm(1)
     }
   })

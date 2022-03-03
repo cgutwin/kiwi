@@ -5,4 +5,5 @@ export { ReactComponent as DotsVertical } from "./dots-vertical.svg"
 export { ReactComponent as Pencil } from "./pencil.svg"
 export { ReactComponent as Plus } from "./plus.svg"
 export { ReactComponent as WarningFilled } from "./warning-filled.svg"
+export { ReactComponent as ChevronRight } from "./chevron-right.svg"
 

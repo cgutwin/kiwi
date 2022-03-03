@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { Route, Routes } from "react-router-dom"
 
 import { useThemeConfig } from "@kiwi/hooks"
-import { ProductDetails, ScanBarcode } from "@kiwi/pages"
+import { ProductPage, ScanBarcode } from "@kiwi/pages"
 import { dark, light } from "@kiwi/themes"
 
 /*
@@ -37,7 +37,7 @@ function App() {
     <React.Fragment>
       <Routes>
         <Route path="/" element={<ScanBarcode/>}/>
-        <Route path="product/:upc" element={<ProductDetails/>}/>
+        <Route path="product/:upc" element={<ProductPage/>}/>
       </Routes>
     </React.Fragment>
   )
