@@ -8,12 +8,15 @@ import CustomInput from "@kiwi/ui/inputs"
 import { useForm } from "react-hook-form"
 import styled from "styled-components"
 import { ButtonReset } from "@kiwi/ui/buttons/IconButton"
+import { useMutation } from "@apollo/client"
+import mutationCreateProduct from "@kiwi/graphql/mutations/createProduct"
 
 function CreateProduct() {
   const { upc } = useParams()
   const navigate = useNavigate()
   const { register, handleSubmit, formState } = useForm()
   const { isDirty } = formState
+  const [ createProduct ] = useMutation(mutationCreateProduct);
 
   const handleBackClick = () => {
     if (isDirty) {
@@ -26,7 +29,18 @@ function CreateProduct() {
   }
 
   const submitHandler = (data: any) => {
-    console.log(data)
+    if (isDirty) {
+      createProduct({
+        variables: {
+          data
+        }
+      })
+        .then(({ data }) => {
+          data && navigate(`/product/${upc}`)
+        })
+    } else if (window.confirm("No changes have been made, go back?")) {
+      navigate(-1)
+    }
   }
 
   return (

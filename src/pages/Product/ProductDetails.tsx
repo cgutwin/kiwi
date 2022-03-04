@@ -13,6 +13,8 @@ import { useQuery } from "@apollo/client"
 import findProductByUPC from "@kiwi/graphql/queries/findProductByUPC"
 import ExpiringView from "./views/Expiry"
 import ProductView from "./views/Product"
+import { ButtonReset } from "@kiwi/ui/buttons/IconButton"
+import flexy from "@kiwi/styles/flexMixin"
 
 function ProductDetails() {
   const [ overflowMenuOpen, setOverflowMenuOpen ] = useState(false)
@@ -54,6 +56,7 @@ function ProductDetails() {
           <ProductView/>
           <ExpiringView/>
         </PageLayout>
+        <NewExpiryButton>New Expiry</NewExpiryButton>
       </PageWrapper>
       <Modal open={overflowMenuOpen} closeAction={() => setOverflowMenuOpen(prevState => !prevState)}>
         {/*todo: remove */}
@@ -64,6 +67,18 @@ function ProductDetails() {
 
   return <p>loading</p>
 }
+
+const NewExpiryButton = styled(ButtonReset)`
+  background: #31F58D;
+  border-radius: 2rem;
+  color: black;
+  font-weight: 600;
+  ${flexy({ justify: "center", align: "center" })};
+  padding: 1rem 1.5rem;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+`
 
 export const Card = styled.div`
   &:not(:last-of-type) {

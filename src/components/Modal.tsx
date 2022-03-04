@@ -10,17 +10,17 @@ import styled from "styled-components"
  * @param {boolean} open - If the modal is open. Mainly used for the animation.
  * @param {function} closeAction - The callback ran to close the modal.
  * */
-function Modal({ open, closeAction, children }: { open: boolean, closeAction: () => void, children: React.ReactNode }) {
+function Modal({ open, closeAction, children, tint = true }: { open: boolean, closeAction: () => void, children: React.ReactNode, tint?: boolean }) {
   return ReactDOM.createPortal(
     <AnimatePresence>
       {open &&
         <ModalContainer>
-          <Tint as={motion.div}
+          {tint && <Tint as={motion.div}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onClick={closeAction}
-          />
+          />}
           <ModalCard as={motion.section}
                      initial={{ y: "100%" }}
                      animate={{ y: "0" }}
