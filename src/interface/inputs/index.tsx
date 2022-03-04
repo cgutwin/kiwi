@@ -15,21 +15,28 @@ const StyledInput = styled.input`
   }
 
   background: none;
-  border: 2px solid gray;
+  border: 1px solid ${({ theme }) => theme.colours.text.fade};
   border-radius: 1rem;
   color: ${({ theme }) => theme.colours.text.main};
   padding: 0.75rem 1rem;
 `
 
 const LabelWrapper = styled.label`
+  &:not(:first-child) {
+    margin-top: 2rem;
+  }
+
+  margin-top: 1rem;
+  
   * {
     grid-row: 1;
     grid-column: 1;
   }
 
   p {
-    background: ${({ theme }) => theme.colours.foreground.hex};
-    color: gray;
+    background: ${({ theme }) => theme.colours.background.hex};
+    // TODO: Separate fade colour from borders and text, make text fade less opaque.
+    color: ${({ theme }) => theme.colours.text.fade};
     margin-left: 1rem;
     transition: transform 150ms;
     width: fit-content;
@@ -39,7 +46,6 @@ const LabelWrapper = styled.label`
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr;
-  margin-top: 1.25rem;
 `
 
 interface InputProps extends React.ComponentPropsWithoutRef<"input"> {

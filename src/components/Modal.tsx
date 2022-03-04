@@ -52,7 +52,7 @@ const Tint = styled.div`
 `
 
 const ModalCard = styled.section`
-  background: ${({ theme }) => theme.colours.foreground.hex};
+  background: ${({ theme }) => theme.colours.background.hex};
   color: ${({ theme }) => theme.colours.text.main};
   border-radius: 1rem 1rem 0 0;
   grid-area: card;

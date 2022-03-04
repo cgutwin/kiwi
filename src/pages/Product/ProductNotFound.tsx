@@ -35,7 +35,7 @@ function ProductNotFound() {
             <p style={{
               color: "#31F58D",
               fontWeight: "700"
-            }}>Create Product</p>
+            }} onClick={() => navigate("./create")}>Create Product</p>
           </PromptChoicesContainer>
         </Card>
       </Main>

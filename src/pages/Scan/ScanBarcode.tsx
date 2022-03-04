@@ -51,7 +51,7 @@ function ScanBarcode() {
         <form id="manualCodeEntry" onSubmit={handleSubmit(onSubmitHandler)}>
           <CustomInput label="Product Code"
                        type="number"
-                       inputMode="tel"
+                       inputMode="numeric"
                        autoComplete="false"
                        {...register("upc", {
                          required: true,

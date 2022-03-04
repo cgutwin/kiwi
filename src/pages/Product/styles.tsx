@@ -8,7 +8,7 @@ export const PageWrapper = styled.div`
   align-items: stretch;
   display: grid;
   grid-template-rows: min-content 1fr;
-  height: 100vh;
+  min-height: 100vh;
 `
 //todo: extract and rename as this will be shared.
 

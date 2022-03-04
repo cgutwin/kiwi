@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom"
 import { useThemeConfig } from "@kiwi/hooks"
 import { ProductPage, ScanBarcode } from "@kiwi/pages"
 import { dark, light } from "@kiwi/themes"
+import CreateProduct from "./pages/Product/CreateProduct"
 
 /*
  * Route structure:
@@ -38,6 +39,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ScanBarcode/>}/>
         <Route path="product/:upc" element={<ProductPage/>}/>
+        <Route path="product/:upc/create" element={<CreateProduct/>}/>
       </Routes>
     </React.Fragment>
   )

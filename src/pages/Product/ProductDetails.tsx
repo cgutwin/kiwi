@@ -79,7 +79,7 @@ export const Card = styled.div`
   padding: 1rem;
 `
 
-const PageLayout = styled.section`
+export const PageLayout = styled.section`
   display: flex;
   flex-direction: column;
   margin: 1rem 1rem 0 1rem;
