@@ -16,7 +16,7 @@ import "./index.css"
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <BrowserRouter>
+      <BrowserRouter basename="/kiwi">
         {/* Inject the theme in the index, so I can manipulate the meta theme tag in <App/> */}
         <InjectTheme initialTheme={window.matchMedia("(prefers-color-scheme: dark)").matches ? dark : light}>
           <App/>

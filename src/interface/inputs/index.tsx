@@ -63,7 +63,7 @@ const CustomInput = React.forwardRef<HTMLInputElement, InputProps>(
                        placeholder=" "
                        {...props}
           />
-          {label ? <p>{label}</p> : null}
+          {label ? <p style={{ textTransform: "capitalize" }}>{label}</p> : null}
         </LabelWrapper>
       </React.Fragment>
     )

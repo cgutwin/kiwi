@@ -1,6 +1,6 @@
 import Typography from "typography"
 
-export default new Typography({
+const typography = new Typography({
   baseFontSize: "16px",
   blockMarginBottom: 0,
   headerLineHeight: 1.1,
@@ -71,3 +71,5 @@ export default new Typography({
     }
   })
 })
+
+export default typography

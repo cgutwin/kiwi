@@ -1,22 +1,20 @@
-import { IconButton } from "@kiwi/ui/buttons"
 import React from "react"
-import { Leading, PageWrapper, VerticalAppBar } from "./styles"
-import { Close } from "@kiwi/icons"
 import { useNavigate, useParams } from "react-router-dom"
-import { PageLayout } from "./ProductDetails"
 import CustomInput from "@kiwi/ui/inputs"
 import { useForm } from "react-hook-form"
 import styled from "styled-components"
 import { ButtonReset } from "@kiwi/ui/buttons/IconButton"
 import { useMutation } from "@apollo/client"
 import mutationCreateProduct from "@kiwi/graphql/mutations/createProduct"
+import { PageWrapper } from "@kiwi/styles/layout"
+import VerticalTitleHeader from "../../../components/VerticalTitleHeader"
 
 function CreateProduct() {
   const { upc } = useParams()
   const navigate = useNavigate()
   const { register, handleSubmit, formState } = useForm()
   const { isDirty } = formState
-  const [ createProduct ] = useMutation(mutationCreateProduct);
+  const [ createProduct ] = useMutation(mutationCreateProduct)
 
   const handleBackClick = () => {
     if (isDirty) {
@@ -45,15 +43,13 @@ function CreateProduct() {
 
   return (
     <PageWrapper>
-      <VerticalAppBar>
-        <Leading>
-          <IconButton>
-            <Close onClick={handleBackClick}/>
-          </IconButton>
-        </Leading>
-        <h1>Create {upc}</h1>
-      </VerticalAppBar>
-      <PageLayout>
+      <VerticalTitleHeader title="Create Product"
+                           subtitle={upc}
+                           backAction={handleBackClick}
+                           overflowAction={() => null}/>
+      <main style={{
+        margin: "1rem"
+      }}>
         <form onSubmit={handleSubmit(submitHandler)} id="editProductForm">
           <CustomInput label="Product Name" type="text" autoComplete="false"
                        {...register("name", {
@@ -72,7 +68,7 @@ function CreateProduct() {
             required: true
           })}/>
         </form>
-      </PageLayout>
+      </main>
       <FixedSubmit>
         <SubmitButton as="input" type="submit" value="Create Product" form="editProductForm"/>
       </FixedSubmit>

@@ -8,7 +8,7 @@
       "@kiwi/hooks": ["hooks"],
       "@kiwi/icons/*": ["icons/*"],
       "@kiwi/ui/*": ["interface/*"],
-      "@kiwi/pages": ["pages"],
+      "@kiwi/pages/**/*": ["pages/**/*"],
       "@kiwi/styles/*": ["styles/*"],
       "@kiwi/themes": ["themes"],
       "@kiwi/utils": ["utils"],

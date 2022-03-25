@@ -1,12 +1,10 @@
 import React from "react"
-import { PageWrapper } from "./styles"
-import { HorizontalHeader } from "./views/Expiry/ExpiryData"
 import { ArrowLeft } from "@kiwi/icons"
 import { IconButton } from "@kiwi/ui/buttons"
 import styled from "styled-components"
 import flexy from "@kiwi/styles/flexMixin"
-import { Card } from "./ProductDetails"
 import { useNavigate, useParams } from "react-router-dom"
+import { PageWrapper } from "@kiwi/styles/layout"
 
 function ProductNotFound() {
   const { upc } = useParams()
@@ -25,17 +23,17 @@ function ProductNotFound() {
         <Card style={{
           width: "100%"
         }}>
-          <HorizontalHeader>
-            <h1 className="t-h-reduced-size-2 t-no-margin">Product Not Found</h1>
-          </HorizontalHeader>
+          <header>
+            <h1 className="t-h-reduced-size-2 t-reduced-bottom-margin">Product Not Found</h1>
+          </header>
           <p className="t-with-margin-bottom">A product with the code {upc} wasn't found.</p>
           <p>Either the code was scanned/entered incorrectly, or it doesn't yet exist in Kiwi's database.</p>
           <PromptChoicesContainer>
             <p onClick={handleBackClick}>Re-Enter Code</p>
-            <p style={{
+            <p onClick={() => navigate("create")} style={{
               color: "#31F58D",
               fontWeight: "700"
-            }} onClick={() => navigate("./create")}>Create Product</p>
+            }}>Create Product</p>
           </PromptChoicesContainer>
         </Card>
       </Main>
@@ -43,11 +41,10 @@ function ProductNotFound() {
   )
 }
 
-const Header = styled(HorizontalHeader)`
-  padding: 1rem 1rem 1.5rem;
-  grid-row: 1;
+const Header = styled.header`
   grid-column: 1;
-  z-index: 2;
+  grid-row: 1;
+  padding: 1rem;
 `
 
 const Main = styled.main`
@@ -64,6 +61,13 @@ const PromptChoicesContainer = styled.div`
   margin: 1.5rem -1rem -1rem;
   padding: 1rem 0;
   border-top: 1px solid ${({ theme }) => theme.colours.text.fade};
+`
+
+const Card = styled.section`
+  border: 1px solid ${({ theme }) => theme.colours.text.fade};
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 1rem;
 `
 
 export default ProductNotFound

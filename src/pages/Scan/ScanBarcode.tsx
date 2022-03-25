@@ -6,10 +6,8 @@ import styled from "styled-components"
 
 import { Modal } from "@kiwi/components"
 import { useScanner } from "@kiwi/hooks"
-import { PageWrapper } from "@kiwi/pages/Product/styles"
-import { ReactComponent as X } from "@kiwi/icons/close.svg"
-import { IconButton } from "@kiwi/ui/buttons"
 import CustomInput from "@kiwi/ui/inputs"
+import { PageWrapper } from "@kiwi/styles/layout"
 
 function ScanBarcode() {
   const [ active, setActive ] = useState(true)
@@ -53,9 +51,13 @@ function ScanBarcode() {
                        type="number"
                        inputMode="numeric"
                        autoComplete="false"
+                       pattern="^(?=.*0)[0-9]{12}$"
                        {...register("upc", {
                          required: true,
-                         valueAsNumber: false
+                         valueAsNumber: false,
+                         pattern: /^(?=.*0)[0-9]{12}$/,
+                         maxLength: 12,
+                         minLength: 12
                        })}/>
         </form>
         <FormControlButtons>
@@ -70,12 +72,7 @@ function ScanBarcode() {
     <React.Fragment>
       <Page>
         <AppBar>
-          <Leading>
-            <IconButton>
-              <X/>
-            </IconButton>
-          </Leading>
-          <h1 className="t-h-reduced-size-4">Scan Barcode</h1>
+          <h1 className="t-h-reduced-size-4" style={{ gridColumn: "1 / span 3" }}>Scan Barcode</h1>
         </AppBar>
         <ScanOverlayWrapper>
           <ScanHighlightOverlay/>
@@ -130,14 +127,6 @@ const ScanOverlaySubtext = styled.p`
   z-index: 4;
 `
 
-const Leading = styled.div`
-  > * {
-    transform: translateY(8%);
-  }
-
-  grid-area: leading;
-`
-
 const AppBar = styled.header`
   > h1, h2, h3, h4, h5, h6 {
     grid-area: title;
@@ -145,7 +134,6 @@ const AppBar = styled.header`
 
   align-items: center;
   background: ${({ theme }) => theme.colours.background.hex};
-  border-radius: 0 0 1rem 1rem;
   display: grid;
   grid-gap: 1rem;
   grid-row: 1;
@@ -166,6 +154,8 @@ const Page = styled(PageWrapper)`
   > * {
     grid-column: 1;
   }
+
+  height: 100vh;
 `
 
 export default ScanBarcode

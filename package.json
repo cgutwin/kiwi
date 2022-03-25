@@ -1,7 +1,8 @@
 {
   "name": "@kiwi/client",
-  "version": "0.1.0",
+  "version": "1.0.0-alpha",
   "private": true,
+  "homepage": "https://cgutwin.ca/kiwi",
   "proxy": "http://localhost:4000",
   "dependencies": {
     "@apollo/client": "^3.5.7",
